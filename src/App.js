@@ -8,13 +8,32 @@ export default function App() {
 
   const [images, setImages] = useState([]);
   const [page, setPage] = useState(1);
+  const [query, setQuery] = useState('');
 
   const getPhotos = () => {
-    fetch(`https://api.unsplash.com/photos?client_id=${accessKey}&page=${page}`)
+    let apiUrl = `https://api.unsplash.com/photos?`;
+    if (query) apiUrl = `https://api.unsplash.com/search/photos?query=${query}`;
+
+    apiUrl += `&page=${page}`;
+    apiUrl += `&client_id=${accessKey}`;
+
+    fetch(apiUrl)
       .then(res => res.json())
       .then((data) => {
-        setImages((images) => [...images, ...data])
+        const imagesFromApi = data.results ?? data;
+
+        // if page is 1, then we need a whole new array of images
+        if (page === 1) setImages(imagesFromApi);
+
+        // if page is greater then 1, then we are adding
+        setImages((images) => [...images, ...imagesFromApi])
       })
+  }
+
+  const searchPhotos = (e) => {
+    e.preventDefault();
+    setPage(1);
+    getPhotos();
   }
 
   useEffect(() => {
@@ -34,8 +53,13 @@ export default function App() {
     <div className="app">
       <h1>Unsplash Image Gallery!</h1>
 
-      <form>
-        <input type="text" placeholder="Search Unsplash..."/>
+      <form onSubmit={searchPhotos}>
+        <input
+          type="text"
+          placeholder="Search Unsplash..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
         <button>Search</button>
       </form>
       <InfiniteScroll

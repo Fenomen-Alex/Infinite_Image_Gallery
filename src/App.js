@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import InfiniteScroll from 'react-infinite-scroll-component/src/index';
+import React, {useCallback, useEffect, useState} from 'react';
+import InfiniteScroll from 'react-infinite-scroll-component';
 import './App.css';
 
 const accessKey = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
@@ -10,7 +10,7 @@ export default function App() {
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState('');
 
-  const getPhotos = () => {
+  const getPhotos = useCallback(() => {
     let apiUrl = `https://api.unsplash.com/photos?`;
     if (query) apiUrl = `https://api.unsplash.com/search/photos?query=${query}`;
 
@@ -23,12 +23,15 @@ export default function App() {
         const imagesFromApi = data.results ?? data;
 
         // if page is 1, then we need a whole new array of images
-        if (page === 1) setImages(imagesFromApi);
+        if (page === 1) {
+          setImages(imagesFromApi);
+          return;
+        }
 
         // if page is greater then 1, then we are adding
         setImages((images) => [...images, ...imagesFromApi])
       })
-  }
+  },[page, query])
 
   const searchPhotos = (e) => {
     e.preventDefault();
@@ -38,7 +41,7 @@ export default function App() {
 
   useEffect(() => {
     getPhotos();
-  }, [page])
+  }, [page, getPhotos])
 
   // return an error if there is no access key
   if (!accessKey) {

@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8a06cf6778fef3639fa1c82177cf2b25",
+    "revision": "2af07ec1f1be7cb182a551e062e2d7af",
     "url": "/Infinite_Image_Gallery/index.html"
   },
   {
-    "revision": "ef55b5912a53f13717f1",
-    "url": "/Infinite_Image_Gallery/static/css/main.daef65c6.chunk.css"
+    "revision": "14b9d7522f53a3ed7082",
+    "url": "/Infinite_Image_Gallery/static/css/main.97e47141.chunk.css"
   },
   {
     "revision": "bbb496c077d9166323f6",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Infinite_Image_Gallery/static/js/2.3176c888.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ef55b5912a53f13717f1",
+    "revision": "14b9d7522f53a3ed7082",
     "url": "/Infinite_Image_Gallery/static/js/main.17423354.chunk.js"
   },
   {

@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Infinite_Image_Gallery/static/css/main.daef65c6.chunk.css",
+    "main.css": "/Infinite_Image_Gallery/static/css/main.97e47141.chunk.css",
     "main.js": "/Infinite_Image_Gallery/static/js/main.17423354.chunk.js",
     "main.js.map": "/Infinite_Image_Gallery/static/js/main.17423354.chunk.js.map",
     "runtime-main.js": "/Infinite_Image_Gallery/static/js/runtime-main.fd4f2d5f.js",
@@ -8,15 +8,15 @@
     "static/js/2.3176c888.chunk.js": "/Infinite_Image_Gallery/static/js/2.3176c888.chunk.js",
     "static/js/2.3176c888.chunk.js.map": "/Infinite_Image_Gallery/static/js/2.3176c888.chunk.js.map",
     "index.html": "/Infinite_Image_Gallery/index.html",
-    "precache-manifest.f16761f362240542bec5ead13086597d.js": "/Infinite_Image_Gallery/precache-manifest.f16761f362240542bec5ead13086597d.js",
+    "precache-manifest.81faa8b355bf4adaf2234a0035b260e4.js": "/Infinite_Image_Gallery/precache-manifest.81faa8b355bf4adaf2234a0035b260e4.js",
     "service-worker.js": "/Infinite_Image_Gallery/service-worker.js",
-    "static/css/main.daef65c6.chunk.css.map": "/Infinite_Image_Gallery/static/css/main.daef65c6.chunk.css.map",
+    "static/css/main.97e47141.chunk.css.map": "/Infinite_Image_Gallery/static/css/main.97e47141.chunk.css.map",
     "static/js/2.3176c888.chunk.js.LICENSE.txt": "/Infinite_Image_Gallery/static/js/2.3176c888.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.fd4f2d5f.js",
     "static/js/2.3176c888.chunk.js",
-    "static/css/main.daef65c6.chunk.css",
+    "static/css/main.97e47141.chunk.css",
     "static/js/main.17423354.chunk.js"
   ]
 }

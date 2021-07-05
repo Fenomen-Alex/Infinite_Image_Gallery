@@ -112,4 +112,8 @@ button:hover {
     display: flex;
     flex-direction: column;
   }
+  input[type='text'] {
+    width: 100%;
+    min-width: unset;
+  }
 }

@@ -1,12 +1,13 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import './App.css';
+import { Unsplash } from './types';
 
 const accessKey = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
 
 export default function App() {
 
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState<Unsplash[]>([]);
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState('');
 
@@ -33,7 +34,7 @@ export default function App() {
       })
   },[page, query])
 
-  const searchPhotos = (e) => {
+  const searchPhotos = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setPage(1);
     getPhotos();
@@ -56,7 +57,7 @@ export default function App() {
     <div className="app">
       <h1>Unsplash Image Gallery!</h1>
 
-      <form onSubmit={searchPhotos}>
+      <form onSubmit={(e) => searchPhotos(e)}>
         <input
           type="text"
           placeholder="Search Unsplash..."
